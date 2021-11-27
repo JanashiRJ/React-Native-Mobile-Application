@@ -1,9 +1,8 @@
 import React from 'react';
-
-import OnboardScreen from './screens/OnboardScreen';
+import Navigator from './navigation';
 
 export default class Root extends React.Component {
   render() {
-    return <OnboardScreen />;
+    return <Navigator />;
   }
 }
