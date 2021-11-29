@@ -1,7 +1,14 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Image,
+} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
 const SignInScreen = () => {
   return (
@@ -25,7 +32,6 @@ const SignInScreen = () => {
             Sign in to continue
           </Text>
         </View>
-
         <View style={{marginTop: 20}}>
           <View style={styles.inputContainer}>
             <TextInput placeholder="Email" style={styles.input} />
@@ -37,6 +43,28 @@ const SignInScreen = () => {
               secureTextEntry
             />
           </View>
+          <TouchableOpacity>
+            <View style={styles.btnPrimary}>
+              <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 18}}>
+                Sign In
+              </Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+            marginTop: 40,
+            marginBottom: 20,
+          }}>
+          <Text style={{color: '#a5a5a5', fontWeight: 'bold'}}>
+            Don`t have an account ?
+          </Text>
+          <TouchableOpacity>
+            <Text style={{color: '#ff2d5f', fontWeight: 'bold'}}>Sign up</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -59,5 +87,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     flex: 1,
     fontSize: 18,
+  },
+  btnPrimary: {
+    backgroundColor: '#28388f',
+    height: 50,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
   },
 });
