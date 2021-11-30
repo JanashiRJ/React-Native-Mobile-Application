@@ -8,7 +8,7 @@ const SignUpScreen = ({navigation}) => {
     <SafeAreaView
       style={{paddingHorizontal: 20, flex: 1, backgroundColor: '#fff'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={{flexDirection: 'row', marginTop: 40}}>
+        <View style={{flexDirection: 'row', marginTop: 50}}>
           <Text style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
             Best
           </Text>
@@ -55,8 +55,7 @@ const SignUpScreen = ({navigation}) => {
           <Text style={{color: '#a5a5a5', fontWeight: 'bold'}}>
             Already have an account ?
           </Text>
-          <TouchableOpacity
-            onPress={() => navigation.navigate('SignInsScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
             <Text style={{color: '#ff2d5f', fontWeight: 'bold'}}>Sign In</Text>
           </TouchableOpacity>
         </View>
@@ -70,7 +69,7 @@ export default SignUpScreen;
 const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 30,
   },
   input: {
     color: 'white',
@@ -80,7 +79,7 @@ const styles = StyleSheet.create({
     // eslint-disable-next-line no-dupe-keys
     borderBottomWidth: 0.5,
     flex: 1,
-    fontSize: 18,
+    fontSize: 17,
   },
   btnPrimary: {
     backgroundColor: '#28388f',
@@ -88,6 +87,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: 70,
   },
 });

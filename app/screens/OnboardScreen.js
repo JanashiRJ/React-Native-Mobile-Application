@@ -12,6 +12,9 @@ class OnboardScreen extends Component {
     super(props);
     this.state = {};
   }
+  onPressProfileButton = () => {
+    this.props.navigation.navigate('SignInScreen');
+  };
 
   render() {
     return (
@@ -31,7 +34,7 @@ class OnboardScreen extends Component {
         </View>
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
           <View style={styles.buttoncontainer}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={this.onPressProfileButton}>
               <View style={styles.button}>
                 <Text style={styles.buttontext}> Get Started </Text>
               </View>

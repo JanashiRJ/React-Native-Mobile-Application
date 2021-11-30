@@ -1,16 +1,9 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TextInput,
-  StyleSheet,
-  Image,
-} from 'react-native';
+import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 
-const SignInScreen = () => {
+const SignInScreen = ({navigation}) => {
   return (
     <SafeAreaView
       style={{paddingHorizontal: 20, flex: 1, backgroundColor: '#fff'}}>
@@ -62,7 +55,7 @@ const SignInScreen = () => {
           <Text style={{color: '#a5a5a5', fontWeight: 'bold'}}>
             Don`t have an account ?
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
             <Text style={{color: '#ff2d5f', fontWeight: 'bold'}}>Sign up</Text>
           </TouchableOpacity>
         </View>
@@ -75,7 +68,7 @@ export default SignInScreen;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: 'row', 
+    flexDirection: 'row',
     marginTop: 20,
   },
   input: {
