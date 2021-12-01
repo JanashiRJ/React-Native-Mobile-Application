@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import OnboardScreen from '../screens/OnboardScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 const PrimaryNavigator = createStackNavigator();
 
@@ -27,6 +28,7 @@ class App extends Component {
             name="SignUpScreen"
             component={SignUpScreen}
           />
+          <PrimaryNavigator.Screen name="HomeScreen" component={HomeScreen} />
         </PrimaryNavigator.Navigator>
       </NavigationContainer>
     );

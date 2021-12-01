@@ -13,7 +13,7 @@ class OnboardScreen extends Component {
     this.state = {};
   }
   onPressProfileButton = () => {
-    this.props.navigation.navigate('SignInScreen');
+    this.props.navigation.navigate('HomeScreen');
   };
 
   render() {
