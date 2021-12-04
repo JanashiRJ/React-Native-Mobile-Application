@@ -15,16 +15,12 @@ import HeaderTab from '../components/HeaderTab';
 
 const items = [
   {
-    image: require('../assets/Images/Categories/Teddy.png'),
-    name: 'TEDDY',
-  },
-  {
-    image: require('../assets/Images/Categories/chocolate.png'),
-    name: 'CHOCOLATE',
-  },
-  {
     image: require('../assets/Images/Categories/Flower.jpg'),
     name: 'FLOWER',
+  },
+  {
+    image: require('../assets/Images/Categories/Teddy.png'),
+    name: 'TEDDY',
   },
   {
     image: require('../assets/Images/Categories/Wooden.png'),
@@ -33,6 +29,10 @@ const items = [
   {
     image: require('../assets/Images/Categories/Wall.png'),
     name: 'WALL DECORATIONS',
+  },
+  {
+    image: require('../assets/Images/Categories/chocolate.png'),
+    name: 'CHOCOLATE',
   },
 ];
 
@@ -44,6 +44,11 @@ const Card = ({cat}) => {
         <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
           {cat.Price}{' '}
         </Text>
+      </View>
+      <View>
+        <Image
+          source={cat.image}
+          style={{height: 100, width: 100, borderRadius: 40}}></Image>
       </View>
     </View>
   );
@@ -75,7 +80,7 @@ const HomeScreen = ({navigation}) => {
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           {items.map((item, index) => (
             <View
-              key={'pet' + index}
+              key={'cat' + index}
               style={{alignItems: 'center', marginRight: 30}}>
               <TouchableOpacity
                 onPress={() => {
@@ -118,7 +123,7 @@ const HomeScreen = ({navigation}) => {
       <View>
         <HeaderTab />
       </View>
-      <View>
+      <View style={{marginTop: 210}}>
         <ListCategories />
       </View>
       <FlatList
@@ -149,27 +154,9 @@ const style = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10,
   },
-  imagesort: {
-    marginLeft: 2,
-    marginTop: 6,
-  },
-  imageadd: {
-    width: 15,
-    height: 15,
-  },
   text: {
     color: 'black',
     fontSize: 12,
-  },
-  sortBtn: {
-    width: 50,
-    height: 50,
-    marginLeft: 4,
-    backgroundColor: '#fa7075',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
   },
   catagoriesListContainer: {
     paddingVertical: 30,
@@ -177,21 +164,22 @@ const style = StyleSheet.create({
     paddingHorizontal: 20,
   },
   titleStyle: {
-    fontSize: 19,
-    fontWeight: '600',
+    fontSize: 16,
+    fontWeight: 'bold',
     color: 'black',
   },
   menuItemStyle: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 40,
+    margin: 25,
   },
   categoryBtn: {
-    height: 45,
-    width: 120,
+    height: 55,
+    width: 70,
     marginRight: 7,
-    borderRadius: 30,
+    borderRadius: 20,
     alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 5,
     flexDirection: 'row',
   },
