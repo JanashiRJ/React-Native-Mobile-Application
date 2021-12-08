@@ -39,7 +39,7 @@ const items = [
 const Card = ({cat}) => {
   return (
     <View style={style.menuItemStyle}>
-      <View style={{width: 240, justifyContent: 'space-evenly'}}>
+      <View style={{width: 240, justifyContent: 'space-evenly', }}>
         <Text style={style.titleStyle}>{cat.name}</Text>
         <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
           {cat.Price}{' '}
@@ -172,6 +172,8 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 25,
+    backgroundColor: 'white',
+    height: 120,
   },
   categoryBtn: {
     height: 55,

@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {
   View,
-  Text,
   SafeAreaView,
   StyleSheet,
+  Text,
   TouchableOpacity,
 } from 'react-native';
+
 
 class OnboardScreen extends Component {
   constructor(props) {
@@ -20,25 +21,27 @@ class OnboardScreen extends Component {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
         <View>
-          <Text style={styles.HomeTopic}>Best Choice</Text>
-        </View>
-        <View>
-          <Text style={styles.Hometext}>
-            We help you to find the best gift items for your loved ones..
-          </Text>
-        </View>
-        <View style={styles.indicatorcontainer}>
-          <View style={styles.Currentindicator} />
-          <View style={styles.indicator} />
-          <View style={styles.indicator} />
-        </View>
-        <View style={{alignItems: 'center', justifyContent: 'center'}}>
-          <View style={styles.buttoncontainer}>
-            <TouchableOpacity onPress={this.onPressProfileButton}>
-              <View style={styles.button}>
-                <Text style={styles.buttontext}> Get Started </Text>
-              </View>
-            </TouchableOpacity>
+          <View>
+            <Text style={styles.HomeTopic}>Best Choice</Text>
+          </View>
+          <View>
+            <Text style={styles.Hometext}>
+              We help you to find the best gift items for your loved ones..
+            </Text>
+          </View>
+          <View style={styles.indicatorcontainer}>
+            <View style={styles.Currentindicator} />
+            <View style={styles.indicator} />
+            <View style={styles.indicator} />
+          </View>
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <View style={styles.buttoncontainer}>
+              <TouchableOpacity onPress={this.onPressProfileButton}>
+                <View style={styles.button}>
+                  <Text style={styles.buttontext}> Get Started </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </SafeAreaView>
@@ -60,10 +63,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'black',
-    marginTop: 180,
+    marginTop: 10,
   },
   Hometext: {
-    marginTop: 20,
+    marginTop: 10,
     fontSize: 16,
     textAlign: 'center',
     color: 'black',
@@ -82,7 +85,7 @@ const styles = StyleSheet.create({
   Currentindicator: {
     height: 13,
     width: 30,
-    backgroundColor: 'blue',
+    backgroundColor: '#1A2641',
     borderRadius: 10,
     marginHorizontal: 5,
   },
@@ -102,7 +105,7 @@ const styles = StyleSheet.create({
     width: 180,
     height: 65,
     borderRadius: 75,
-    backgroundColor: 'blue',
+    backgroundColor: '#1A2641',
     marginTop: 20,
   },
   buttontext: {
