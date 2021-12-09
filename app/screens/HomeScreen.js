@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from 'react-native';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import category from '../constants/Categories';
 import HeaderTab from '../components/HeaderTab';
 
@@ -39,7 +40,11 @@ const items = [
 const Card = ({cat}) => {
   return (
     <View style={style.menuItemStyle}>
-      <View style={{width: 240, justifyContent: 'space-evenly', }}>
+      <BouncyCheckbox
+        iconStyle={{borderColor: 'gray', borderRadius: 0}}
+        fillColor="#5f6885"
+      />
+      <View style={{width: 240, justifyContent: 'space-evenly'}}>
         <Text style={style.titleStyle}>{cat.name}</Text>
         <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
           {cat.Price}{' '}

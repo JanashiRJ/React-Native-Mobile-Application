@@ -13,10 +13,10 @@ export default function HeaderTab() {
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View
         style={{
-          backgroundColor: 'white',
-          height: 200,
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
+          backgroundColor: '#1A2641',
+          height: 220,
+          borderBottomLeftRadius: 25,
+          borderBottomRightRadius: 25,
           paddingHorizontal: 20,
         }}>
         <View style={styles.header}>
