@@ -45,9 +45,9 @@ const Card = ({cat}) => {
         fillColor="#5f6885"
       />
       <View style={{width: 240, justifyContent: 'space-evenly'}}>
-        <Text style={style.titleStyle}>{cat.name}</Text>
+        <Text style={style.titleStyle}>{cat.title}</Text>
         <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
-          {cat.Price}{' '}
+          {cat.price}{' '}
         </Text>
       </View>
       <View>
@@ -209,7 +209,7 @@ const style = StyleSheet.create({
     height: 30,
     width: 30,
     borderRadius: 20,
-    backgroundColor: '#ed5151',
+    backgroundColor: '#5f6885',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 10,
