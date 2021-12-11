@@ -19,11 +19,11 @@ const Card = ({category}) => {
       <View style={{alignItems: 'center'}}>
         <Image
           source={category.image}
-          style={{height: 100, width: 100, borderRadius: 40}}
+          style={{height: 130, width: 140, borderRadius: 20, marginTop: 12}}
         />
       </View>
       <View style={{marginHorizontal: 20}}>
-        <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
+        <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black', marginTop:20}}>
           {category.title}
         </Text>
       </View>
@@ -33,7 +33,7 @@ const Card = ({category}) => {
 
 export default function Moredetails() {
   return (
-    <SafeAreaView style={{backgroundColor: '#edf0ee', flex: 1}}>
+    <SafeAreaView style={{backgroundColor: '#f5f7f5', flex: 1}}>
       <View style={{backgroundColor: 'white', padding: 15}}>
         <Header />
       </View>
