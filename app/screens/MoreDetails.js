@@ -9,7 +9,7 @@ import {
   FlatList,
 } from 'react-native';
 import Header from '../components/Moredetails/Header';
-import category from '../constants/OccationList';
+import category from '../constants/CategoryList';
 const {width} = Dimensions.get('screen');
 const cardWidth = width / 2 - 20;
 
