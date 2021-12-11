@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import OnboardScreen from '../screens/OnboardScreen';
 import SignInScreen from '../screens/SignInScreen';
 import SignUpScreen from '../screens/SignUpScreen';
+import FirstScreen from '../screens/FirstScreen';
 import HomeScreen from '../screens/HomeScreen';
 
 const PrimaryNavigator = createStackNavigator();
@@ -15,7 +16,7 @@ class App extends Component {
       <NavigationContainer>
         <PrimaryNavigator.Navigator
           headerMode={{}}
-          initialRouteName="OnboardScreen">
+          initialRouteName="FirstScreen">
           <PrimaryNavigator.Screen
             name="OnboardScreen"
             component={OnboardScreen}
@@ -28,6 +29,7 @@ class App extends Component {
             name="SignUpScreen"
             component={SignUpScreen}
           />
+          <PrimaryNavigator.Screen name="FirstScreen" component={FirstScreen} />
           <PrimaryNavigator.Screen name="HomeScreen" component={HomeScreen} />
         </PrimaryNavigator.Navigator>
       </NavigationContainer>
