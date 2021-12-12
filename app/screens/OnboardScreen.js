@@ -14,7 +14,7 @@ class OnboardScreen extends Component {
     this.state = {};
   }
   onPressProfileButton = () => {
-    this.props.navigation.navigate('HomeScreen');
+    this.props.navigation.navigate('FirstScreen');
   };
 
   render() {

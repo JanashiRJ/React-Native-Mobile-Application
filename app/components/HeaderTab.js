@@ -1,12 +1,6 @@
 import React from 'react';
-import {
-  View,
-  SafeAreaView,
-  Text,
-  Image,
-  StyleSheet,
-  TextInput
-} from 'react-native';
+import {View, SafeAreaView, Text, StyleSheet} from 'react-native';
+import 'react-native-gesture-handler';
 
 export default function HeaderTab() {
   return (
@@ -14,10 +8,10 @@ export default function HeaderTab() {
       <View
         style={{
           backgroundColor: '#1A2641',
-          height: 220,
-          borderBottomLeftRadius: 25,
-          borderBottomRightRadius: 25,
+          height: 230,
           paddingHorizontal: 20,
+          borderBottomLeftRadius: 30,
+          borderBottomRightRadius: 30,
         }}>
         <View style={styles.header}>
           <View>
@@ -32,29 +26,11 @@ export default function HeaderTab() {
             </Text>
           </View>
         </View>
-        <View
-          style={{marginTop: 40, flexDirection: 'row', paddingHorizontal: 20}}>
-          <View style={styles.inputcontainer}>
-            <Image
-              style={styles.image}
-              source={require('../assets/Images/search.png')}
-            />
-            <TextInput
-              style={{flex: 1, fontSize: 18}}
-              placeholder="search for Items"
-            />
-          </View>
-          <View style={styles.sortBtn}>
-            <Image
-              style={styles.imagesort}
-              source={require('../assets/Images/sort.png')}
-            />
-          </View>
-        </View>
       </View>
     </SafeAreaView>
   );
 };
+
 
 const styles = StyleSheet.create({
   header: {
@@ -62,31 +38,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
-  },
-  inputcontainer: {
-    flex: 1,
-    height: 50,
-    borderRadius: 10,
-    flexDirection: 'row',
-    backgroundColor: '#dce0dd',
-    opacity: 25,
-  },
-  image: {
-    marginLeft: 10,
-    marginTop: 10,
-  },
-  imagesort: {
-    marginLeft: 2,
-    marginTop: 6,
-  },
-  sortBtn: {
-    width: 50,
-    height: 50,
-    marginLeft: 4,
-    backgroundColor: 'white',
-    borderRadius: 10,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 10,
   },
 });

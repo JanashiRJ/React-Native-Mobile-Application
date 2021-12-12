@@ -23,7 +23,13 @@ const Card = ({category}) => {
         />
       </View>
       <View style={{marginHorizontal: 20}}>
-        <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black', marginTop:20}}>
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: 'bold',
+            color: 'black',
+            marginTop: 20,
+          }}>
           {category.title}
         </Text>
       </View>

@@ -9,6 +9,7 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
+  TextInput,
 } from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import category from '../constants/Categories';
@@ -78,7 +79,7 @@ const HomeScreen = ({navigation}) => {
     return (
       <View
         style={{
-          marginTop: 15,
+          marginTop: -150,
           paddingVertical: 10,
           paddingLeft: 20,
         }}>
@@ -127,6 +128,27 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View>
         <HeaderTab />
+        <View
+          style={{marginTop: 120, flexDirection: 'row', paddingHorizontal: 20}}>
+          <View style={style.inputcontainer}>
+            <Image
+              style={style.image}
+              source={require('../assets/Images/search.png')}
+            />
+            <TextInput
+              style={{flex: 1, fontSize: 18}}
+              placeholder="search for Items"
+            />
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate('MoreDetails')}>
+            <View style={style.sortBtn}>
+              <Image
+                style={style.imagesort}
+                source={require('../assets/Images/sort.png')}
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
       </View>
       <View style={{marginTop: 210}}>
         <ListCategories />
@@ -159,6 +181,20 @@ const style = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10,
   },
+  imagesort: {
+    marginLeft: 2,
+    marginTop: 6,
+  },
+  sortBtn: {
+    width: 50,
+    height: 50,
+    marginLeft: 4,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
   text: {
     color: 'black',
     fontSize: 12,
@@ -177,6 +213,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 25,
+    marginTop: -10,
     backgroundColor: 'white',
     height: 120,
   },
