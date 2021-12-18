@@ -12,7 +12,7 @@ const Moredetails = ({navigation}) => {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flexDirection: 'row', alignSelf: 'center', marginTop: 5}}>
-          <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Firstscreen')}>
             <View style={style.imageBtn}>
               <Image
                 style={style.imagestyle}
