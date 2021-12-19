@@ -1,10 +1,13 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
+import SecondscreenHeader from '../../components/Moredetails/SecondscreenHeader';
 
 const Secondscreen = () => {
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
-      <Text> Secondscreen</Text>
+      <View style={{backgroundColor: 'white', padding: 15}}>
+        <SecondscreenHeader />
+      </View>
     </SafeAreaView>
   );
 };
