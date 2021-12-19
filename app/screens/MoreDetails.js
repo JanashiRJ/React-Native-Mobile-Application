@@ -21,7 +21,7 @@ const Moredetails = ({navigation}) => {
               <Text style={style.text}>Birth Day Parties</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Secondscreen')}>
             <View style={style.imageBtn}>
               <Image
                 style={style.imagestyle}
