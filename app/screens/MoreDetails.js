@@ -32,7 +32,7 @@ const Moredetails = ({navigation}) => {
           </TouchableOpacity>
         </View>
         <View style={{flexDirection: 'row', alignSelf: 'center', marginTop: 5}}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Thirdscreen')}>
             <View style={style.imageBtn}>
               <Image
                 style={style.imagestyle}

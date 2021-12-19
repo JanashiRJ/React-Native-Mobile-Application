@@ -11,6 +11,7 @@ import MoreDetails from '../screens/MoreDetails';
 import HeaderTab from '../components/HeaderTab';
 import Firstscreen from '../screens/MoreDetailScreens/Firstscreen';
 import Secondscreen from '../screens/MoreDetailScreens/Secondscreen';
+import Thirdscreen from '../screens/MoreDetailScreens/Thirdscreen';
 const PrimaryNavigator = createStackNavigator();
 
 class App extends Component {
@@ -41,6 +42,7 @@ class App extends Component {
           <PrimaryNavigator.Screen name="HomeScreen" component={HomeScreen} />
           <PrimaryNavigator.Screen name="MoreDetails" component={MoreDetails} />
           <PrimaryNavigator.Screen name="HeaderTab" component={HeaderTab} />
+          <PrimaryNavigator.Screen name="Thirdscreen" component={Thirdscreen} />
         </PrimaryNavigator.Navigator>
       </NavigationContainer>
     );
