@@ -41,7 +41,7 @@ const Moredetails = ({navigation}) => {
               <Text style={style.text}>Valentine days</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Forthscreen')}>
             <View style={style.imageBtn}>
               <Image
                 style={style.imagestyle}
