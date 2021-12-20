@@ -14,6 +14,9 @@ import {
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import category from '../constants/Categories';
 import HeaderTab from '../components/HeaderTab';
+import ViewCart from '../components/ViewCart';
+import {useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 
 const items = [
   {
@@ -38,27 +41,6 @@ const items = [
   },
 ];
 
-const Card = ({cat}) => {
-  return (
-    <View style={style.menuItemStyle}>
-      <BouncyCheckbox
-        iconStyle={{borderColor: 'gray', borderRadius: 0}}
-        fillColor="#5f6885"
-      />
-      <View style={{width: 240, justifyContent: 'space-evenly'}}>
-        <Text style={style.titleStyle}>{cat.title}</Text>
-        <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
-          {cat.price}{' '}
-        </Text>
-      </View>
-      <View>
-        <Image
-          source={cat.image}
-          style={{height: 100, width: 100, borderRadius: 40}}></Image>
-      </View>
-    </View>
-  );
-};
 
 const HomeScreen = ({navigation}) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
@@ -75,6 +57,46 @@ const HomeScreen = ({navigation}) => {
     filtercat(0);
   }, []);
 
+  const Card = ({cat}) => {
+    const dispatch = useDispatch();
+
+    const selectItem = (item, checkboxValue) =>
+      dispatch({
+        type: 'ADD_TO_CART',
+        payload: {
+          ...item,
+          checkboxValue: checkboxValue,
+        },
+      });
+
+    const cartItems = useSelector(
+      state => state.cartReducer.selectedItems.items,
+    );
+
+    const ItemInCart = () =>
+      Boolean(cartItems.find(item => item.title === cat.title));
+    return (
+      <View style={style.menuItemStyle}>
+        <BouncyCheckbox
+          iconStyle={{borderColor: 'gray', borderRadius: 0}}
+          fillColor="#5f6885"
+          onPress={checkboxValue => selectItem(cat, checkboxValue)}
+        />
+
+        <View style={{width: 240, justifyContent: 'space-evenly'}}>
+          <Text style={style.titleStyle}>{cat.title}</Text>
+          <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
+            {cat.price}{' '}
+          </Text>
+        </View>
+        <View>
+          <Image
+            source={cat.image}
+            style={{height: 100, width: 100, borderRadius: 40}}></Image>
+        </View>
+      </View>
+    );
+  };
   const ListCategories = () => {
     return (
       <View
@@ -158,6 +180,7 @@ const HomeScreen = ({navigation}) => {
         data={filteredcats}
         renderItem={({item}) => <Card cat={item} navigation={navigation} />}
       />
+      <ViewCart />
     </SafeAreaView>
   );
 };
