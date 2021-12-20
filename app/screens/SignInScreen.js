@@ -1,12 +1,38 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import {SafeAreaView, View, Text, TextInput, StyleSheet} from 'react-native';
+import React, {useState} from 'react';
+import {
+  SafeAreaView,
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  Alert,
+} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
+import auth from '@react-native-firebase/auth';
 
 const SignInScreen = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const userSigning = async () => {
+    if (!email || !password) {
+      Alert.alert('please fil all the fields');
+      return
+    }
+    try {
+      const result = await auth().signInWithEmailAndPassword(email, password)
+      console.log(result.user)
+      navigation.replace('FirstScreen')
+    } catch (err) {
+      Alert.alert('something went wrong please try different password');
+    }
+  };
+
+
   return (
     <SafeAreaView
-      style={{paddingHorizontal: 20, flex: 1, backgroundColor: '#fff'}}>
+      style={{paddingHorizontal: 20, flex: 1, backgroundColor: 'black'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flexDirection: 'row', marginTop: 40}}>
           <Text style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
@@ -27,16 +53,25 @@ const SignInScreen = ({navigation}) => {
         </View>
         <View style={{marginTop: 20}}>
           <View style={styles.inputContainer}>
-            <TextInput placeholder="Email" style={styles.input} />
+            <TextInput
+              placeholder="Email"
+              value={email}
+              mode="outlined"
+              style={styles.input}
+              onChangeText={text => setEmail(text)}
+            />
           </View>
           <View style={styles.inputContainer}>
             <TextInput
               placeholder="Password"
+              value={password}
+              mode="outlined"
               style={styles.input}
-              secureTextEntry
+              secureTextEntry={true}
+              onChangeText={text => setPassword(text)}
             />
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity mode="contained" onPress={() => userSigning()}>
             <View style={styles.btnPrimary}>
               <Text style={{color: '#fff', fontWeight: 'bold', fontSize: 18}}>
                 Sign In
@@ -90,3 +125,10 @@ const styles = StyleSheet.create({
     marginTop: 50,
   },
 });
+
+
+
+
+
+
+
