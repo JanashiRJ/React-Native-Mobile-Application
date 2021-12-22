@@ -73,20 +73,21 @@ const HomeScreen = ({navigation}) => {
       state => state.cartReducer.selectedItems.items,
     );
 
-    const ItemInCart = () =>
+    const isItemInCart = (cat, cartItems) =>
       Boolean(cartItems.find(item => item.title === cat.title));
     return (
       <View style={style.menuItemStyle}>
         <BouncyCheckbox
           iconStyle={{borderColor: 'gray', borderRadius: 0}}
           fillColor="#5f6885"
+          isChecked={isItemInCart(cat, cartItems)}
           onPress={checkboxValue => selectItem(cat, checkboxValue)}
         />
 
         <View style={{width: 240, justifyContent: 'space-evenly'}}>
           <Text style={style.titleStyle}>{cat.title}</Text>
           <Text style={{fontSize: 15, fontWeight: 'bold', color: 'black'}}>
-            {cat.price}{' '}
+            Rs.{cat.price}{' '}
           </Text>
         </View>
         <View>

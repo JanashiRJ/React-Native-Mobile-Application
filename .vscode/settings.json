@@ -10,6 +10,7 @@
         "imageteddy",
         "inputcontainer",
         "Mathara",
+        "Modalcontent",
         "Moredetails",
         "Occation",
         "Passcode",
@@ -17,6 +18,7 @@
         "Secondscreen",
         "setactive",
         "Thirdscreen",
+        "Titlename",
         "usericon"
     ]
 }

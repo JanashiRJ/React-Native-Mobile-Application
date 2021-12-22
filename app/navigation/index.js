@@ -27,7 +27,7 @@ class App extends Component {
         <NavigationContainer>
           <PrimaryNavigator.Navigator
             headerMode={{}}
-            initialRouteName="SignInScreen">
+            initialRouteName="HomeScreen">
             <PrimaryNavigator.Screen
               name="OnboardScreen"
               component={OnboardScreen}
