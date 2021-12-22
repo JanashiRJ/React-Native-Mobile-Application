@@ -32,7 +32,7 @@ const SignInScreen = ({navigation}) => {
 
   return (
     <SafeAreaView
-      style={{paddingHorizontal: 20, flex: 1, backgroundColor: 'black'}}>
+      style={{paddingHorizontal: 20, flex: 1, backgroundColor: 'white'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flexDirection: 'row', marginTop: 40}}>
           <Text style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   input: {
-    color: 'white',
+    color: 'black',
     paddingLeft: 30,
     borderBottomWidth: 1,
     borderColor: '#a5a5a5',

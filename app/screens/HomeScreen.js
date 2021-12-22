@@ -17,6 +17,7 @@ import HeaderTab from '../components/HeaderTab';
 import ViewCart from '../components/ViewCart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import BottomTab from '../components/BottomTab';
 
 const items = [
   {
@@ -182,6 +183,7 @@ const HomeScreen = ({navigation}) => {
         renderItem={({item}) => <Card cat={item} navigation={navigation} />}
       />
       <ViewCart />
+      <BottomTab />
     </SafeAreaView>
   );
 };

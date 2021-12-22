@@ -5,8 +5,8 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
+  Image,
 } from 'react-native';
-
 
 class OnboardScreen extends Component {
   constructor(props) {
@@ -14,26 +14,17 @@ class OnboardScreen extends Component {
     this.state = {};
   }
   onPressProfileButton = () => {
-    this.props.navigation.navigate('FirstScreen');
+    this.props.navigation.navigate('SignInScreen');
   };
 
   render() {
     return (
       <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
+        <Image
+          style={styles.image}
+          source={require('../assets/Images/Logo.jpg')}
+        />
         <View>
-          <View>
-            <Text style={styles.HomeTopic}>Best Choice</Text>
-          </View>
-          <View>
-            <Text style={styles.Hometext}>
-              We help you to find the best gift items for your loved ones..
-            </Text>
-          </View>
-          <View style={styles.indicatorcontainer}>
-            <View style={styles.Currentindicator} />
-            <View style={styles.indicator} />
-            <View style={styles.indicator} />
-          </View>
           <View style={{alignItems: 'center', justifyContent: 'center'}}>
             <View style={styles.buttoncontainer}>
               <TouchableOpacity onPress={this.onPressProfileButton}>
@@ -58,44 +49,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingBottom: 40,
   },
-  HomeTopic: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    color: 'black',
-    marginTop: 10,
-  },
-  Hometext: {
-    marginTop: 10,
-    fontSize: 16,
-    textAlign: 'center',
-    color: 'black',
-    marginLeft: 10,
-    marginRight: 10,
-    justifyContent: 'space-between',
-  },
-  indicatorcontainer: {
-    height: 30,
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 50,
-  },
-  Currentindicator: {
-    height: 13,
-    width: 30,
-    backgroundColor: '#1A2641',
-    borderRadius: 10,
-    marginHorizontal: 5,
-  },
-  indicator: {
-    height: 12,
-    width: 12,
-    backgroundColor: 'gray',
-    borderRadius: 6,
-    marginHorizontal: 5,
-  },
   buttoncontainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -106,7 +59,7 @@ const styles = StyleSheet.create({
     height: 65,
     borderRadius: 75,
     backgroundColor: '#1A2641',
-    marginTop: 20,
+    marginTop: 110,
   },
   buttontext: {
     color: 'white',
@@ -117,5 +70,9 @@ const styles = StyleSheet.create({
     letterSpacing: -0.39,
     opacity: 20,
     marginTop: 15,
+  },
+  image:{
+    width: 410,
+    height: 520,
   },
 });

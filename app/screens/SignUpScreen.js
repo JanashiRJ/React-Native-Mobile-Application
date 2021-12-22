@@ -29,7 +29,7 @@ const SignUpScreen = ({navigation}) => {
 
   return (
     <SafeAreaView
-      style={{paddingHorizontal: 20, flex: 1, backgroundColor: 'black'}}>
+      style={{paddingHorizontal: 20, flex: 1, backgroundColor: 'white'}}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flexDirection: 'row', marginTop: 50}}>
           <Text style={{fontWeight: 'bold', fontSize: 22, color: '#000'}}>
@@ -87,7 +87,7 @@ const SignUpScreen = ({navigation}) => {
           <Text style={{color: '#a5a5a5', fontWeight: 'bold'}}>
             Already have an account ?
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SignUpScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
             <Text style={{color: '#ff2d5f', fontWeight: 'bold'}}>Sign In</Text>
           </TouchableOpacity>
         </View>
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   input: {
-    color: 'white',
+    color: 'black',
     paddingLeft: 30,
     borderBottomWidth: 1,
     borderColor: '#a5a5a5',

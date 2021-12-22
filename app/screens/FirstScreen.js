@@ -18,7 +18,6 @@ const FirstScreen = ({navigation}) => {
           <Text style={styles.Topicone}>Best</Text>
           <Text style={styles.Topictwo}>Choice</Text>
         </View>
-
         <View>
           <Text style={styles.Hometext}>
             We help you to find the best gift items for your loved ones..
@@ -28,7 +27,6 @@ const FirstScreen = ({navigation}) => {
       <View style={{backgroundColor: 'white', padding: 14, marginTop: 10}}>
         <FirstScreenHeadertab />
       </View>
-
       <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <ShopCategories />
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
   Topicone: {
     fontSize: 32,
     fontWeight: 'bold',
-    color: 'black',
+    color: 'gray',
   },
   Topictwo: {
     fontWeight: 'bold',
