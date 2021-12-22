@@ -3,7 +3,6 @@ import {SafeAreaView, StyleSheet, Image, View, Text} from 'react-native';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Header from '../components/Moredetails/Header';
 
-
 const Moredetails = ({navigation}) => {
   return (
     <SafeAreaView style={{backgroundColor: '#f5f7f5', flex: 1}}>
@@ -52,6 +51,17 @@ const Moredetails = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </ScrollView>
+      <View>
+        <View style={{alignItems: 'center', justifyContent: 'center'}}>
+          <View style={style.buttoncontainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
+              <View style={style.button}>
+                <Text style={style.buttontext}> Home </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
     </SafeAreaView>
   );
 };
@@ -84,6 +94,28 @@ const style = StyleSheet.create({
     marginHorizontal: 10,
     textAlign: 'center',
     justifyContent: 'center',
+  },
+  buttoncontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  button: {
+    width: 120,
+    height: 35,
+    borderRadius: 12,
+    backgroundColor: '#b8afae',
+    marginTop: 2,
+  },
+  buttontext: {
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontSize: 18,
+    letterSpacing: -0.39,
+    opacity: 20,
+    marginTop: 1,
   },
 });
 

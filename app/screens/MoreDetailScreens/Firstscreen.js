@@ -6,6 +6,7 @@ import {
   Text,
   Image,
   FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import FirstscreenHeader from '../../components/Moredetails/FirstscreenHeader';
@@ -68,13 +69,19 @@ const Card = ({items}) => {
   );
 };
 
-const Firstscreen = () => {
+const Firstscreen = ({navigation}) => {
   return (
     <SafeAreaView style={{backgroundColor: 'white', flex: 1}}>
       <View style={{backgroundColor: 'white', padding: 15}}>
         <FirstscreenHeader />
       </View>
       <FlatList data={items} renderItem={({item}) => <Card items={item} />} />
+      <TouchableOpacity onPress={() => navigation.navigate('MoreDetails')}>
+        <Image
+          style={{width: 35, height: 35, resizeMode: 'contain', marginLeft: 15}}
+          source={require('../../assets/Images/Icon/arrow.png')}
+        />
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
