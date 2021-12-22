@@ -10,8 +10,6 @@ export default function HeaderTab() {
           backgroundColor: '#1A2641',
           height: 230,
           paddingHorizontal: 20,
-          borderBottomLeftRadius: 30,
-          borderBottomRightRadius: 30,
         }}>
         <View style={styles.header}>
           <View>

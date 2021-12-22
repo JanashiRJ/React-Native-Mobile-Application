@@ -9,7 +9,6 @@ import {
   ScrollView,
   TouchableOpacity,
   FlatList,
-  TextInput,
 } from 'react-native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import category from '../constants/Categories';
@@ -17,7 +16,6 @@ import HeaderTab from '../components/HeaderTab';
 import ViewCart from '../components/ViewCart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
-import BottomTab from '../components/BottomTab';
 
 const items = [
   {
@@ -41,7 +39,6 @@ const items = [
     name: 'CHOCOLATE',
   },
 ];
-
 
 const HomeScreen = ({navigation}) => {
   const [selectedCategoryIndex, setSelectedCategoryIndex] = React.useState(0);
@@ -152,29 +149,22 @@ const HomeScreen = ({navigation}) => {
     <SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
       <View>
         <HeaderTab />
-        <View
-          style={{marginTop: 120, flexDirection: 'row', paddingHorizontal: 20}}>
-          <View style={style.inputcontainer}>
-            <Image
-              style={style.image}
-              source={require('../assets/Images/search.png')}
-            />
-            <TextInput
-              style={{flex: 1, fontSize: 18}}
-              placeholder="search for Items"
-            />
-          </View>
-          <TouchableOpacity onPress={() => navigation.navigate('MoreDetails')}>
-            <View style={style.sortBtn}>
-              <Image
-                style={style.imagesort}
-                source={require('../assets/Images/sort.png')}
-              />
+        <View>
+          <View style={{alignItems: 'center', justifyContent: 'center'}}>
+            <View style={style.buttoncontainer}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate('MoreDetails')}>
+                <View style={style.button}>
+                  <Text style={style.buttontext}>
+                    Click and Choose More items{' '}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
-          </TouchableOpacity>
+          </View>
         </View>
       </View>
-      <View style={{marginTop: 210}}>
+      <View style={{marginTop: 150}}>
         <ListCategories />
       </View>
       <FlatList
@@ -182,8 +172,13 @@ const HomeScreen = ({navigation}) => {
         data={filteredcats}
         renderItem={({item}) => <Card cat={item} navigation={navigation} />}
       />
+      <TouchableOpacity onPress={() => navigation.navigate('FirstScreen')}>
+        <Image
+          style={{width: 35, height: 35, resizeMode: 'contain', marginLeft: 15}}
+          source={require('../assets/Images/Icon/arrow.png')}
+        />
+      </TouchableOpacity>
       <ViewCart />
-      <BottomTab />
     </SafeAreaView>
   );
 };
@@ -277,6 +272,28 @@ const style = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     marginLeft: 80,
+  },
+  buttoncontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 50,
+  },
+  button: {
+    width: 280,
+    height: 50,
+    borderRadius: 15,
+    backgroundColor: '#b8afae',
+    marginTop: 140,
+  },
+  buttontext: {
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontSize: 18,
+    letterSpacing: -0.39,
+    opacity: 20,
+    marginTop: 10,
   },
 });
 

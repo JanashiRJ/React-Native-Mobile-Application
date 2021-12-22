@@ -35,17 +35,17 @@ const category = [
       {
         title:
           'A bouquet of natural flowers with a beautiful finishing for special lovers',
-        price: '3000',
+        price: '3500',
         image: require('../assets/Images/Flowers/image1.jpg'),
       },
       {
         title: ' Glass Dome Lamp Gift Box with red colour flower',
-        price: '3000',
+        price: '2500',
         image: require('../assets/Images/Flowers/image2.jpg'),
       },
       {
         title: 'Black-colour Rose Mini Bouquet with Artificial flowers',
-        price: '3000',
+        price: '2000',
         image: require('../assets/Images/Flowers/image3.jpg'),
       },
       {
