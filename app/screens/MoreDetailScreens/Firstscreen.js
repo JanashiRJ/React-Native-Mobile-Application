@@ -118,4 +118,28 @@ const style = StyleSheet.create({
     backgroundColor: 'white',
     height: 120,
   },
+  buttoncontainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 20,
+
+  },
+  button: {
+    width: 120,
+    height: 35,
+    borderRadius: 12,
+    backgroundColor: 'black',
+    marginTop: 2,
+    marginRight: 50,
+  },
+  buttontext: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontSize: 18,
+    letterSpacing: -0.39,
+    opacity: 20,
+    marginTop: 1,
+  },
 });

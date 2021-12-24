@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Modal} from 'react-native';
+import {View, Text, StyleSheet, Modal} from 'react-native';
 import {useSelector} from 'react-redux';
 import OrderItem from './OrderItem';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
 export default function ViewCart() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -54,7 +55,7 @@ export default function ViewCart() {
     },
   });
 
-  const checkoutModalcontent = () => {
+  const checkoutModalcontent = navigation => {
     return (
       <>
         <View style={styles.modalContainer}>
@@ -76,7 +77,7 @@ export default function ViewCart() {
                   position: 'relative',
                   marginTop: 20,
                   backgroundColor: 'black',
-                  alignItems: 'center',  
+                  alignItems: 'center',
                 }}
                 onPress={() => setModalVisible(false)}>
                 <Text style={{color: 'white', fontSize: 18}}> CheckOut </Text>
@@ -92,6 +93,18 @@ export default function ViewCart() {
                 </Text>
               </TouchableOpacity>
             </View>
+            <TouchableOpacity>
+              <Text
+                style={{
+                  color: 'black',
+                  fontSize: 15,
+                  marginTop: 180,
+                  margin: 80,
+                  fontWeight:'bold',
+                }}>
+                Oder Completed
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </>
@@ -115,7 +128,7 @@ export default function ViewCart() {
             zIndex: 999,
             flex: 1,
             alignItems: 'center',
-            position: 'absolute', 
+            position: 'absolute',
           }}>
           <View style={{flexDirection: 'row', justifyContent: 'center'}}>
             <TouchableOpacity
@@ -130,7 +143,7 @@ export default function ViewCart() {
                 marginTop: 30,
                 backgroundColor: 'black',
                 alignItems: 'center',
-                marginLeft: 80,  
+                marginLeft: 80,
               }}
               onPress={() => setModalVisible(true)}>
               <Text style={{color: 'white', fontSize: 20, marginRight: 80}}>

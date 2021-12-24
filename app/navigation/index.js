@@ -13,6 +13,8 @@ import Firstscreen from '../screens/MoreDetailScreens/Firstscreen';
 import Secondscreen from '../screens/MoreDetailScreens/Secondscreen';
 import Thirdscreen from '../screens/MoreDetailScreens/Thirdscreen';
 import Forthscreen from '../screens/MoreDetailScreens/Forthscreen';
+import OrderCompleted from '../screens/OrderCompleted';
+import ViewCart from '../components/ViewCart';
 import {Provider as ReduxProvider} from 'react-redux';
 import configureStore from '../reducers/Store';
 
@@ -66,6 +68,11 @@ class App extends Component {
               name="Forthscreen"
               component={Forthscreen}
             />
+            <PrimaryNavigator.Screen
+              name="OrderCompleted"
+              component={OrderCompleted}
+            />
+            <PrimaryNavigator.Screen name="ViewCart" component={ViewCart} />
           </PrimaryNavigator.Navigator>
         </NavigationContainer>
       </ReduxProvider>
