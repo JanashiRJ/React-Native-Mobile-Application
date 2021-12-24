@@ -16,7 +16,6 @@ import HeaderTab from '../components/HeaderTab';
 import ViewCart from '../components/ViewCart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
-import BottomTab from '../components/BottomTab';
 
 const items = [
   {
@@ -180,19 +179,20 @@ const HomeScreen = ({navigation}) => {
           marginHorizontal: 30,
           justifyContent: 'space-between',
         }}>
-        <TouchableOpacity onPress={() => navigation.navigate('MoreDetails')}>
+        <TouchableOpacity onPress={() => navigation.navigate('HomeScreen')}>
           <Image
             style={{width: 30, height: 30, resizeMode: 'contain'}}
             source={require('../assets/Images/Icon/home.png')}
           />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('OrderCompleted')}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate(' AddDetailsScreen ')}>
           <Image
             style={{width: 30, height: 30, resizeMode: 'contain'}}
             source={require('../assets/Images/Icon/user.png')}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('OrderCompleted')}>
           <Image
             style={{width: 30, height: 30, resizeMode: 'contain'}}
             source={require('../assets/Images/Icon/cart.png')}

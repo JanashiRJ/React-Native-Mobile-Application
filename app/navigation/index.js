@@ -17,6 +17,7 @@ import OrderCompleted from '../screens/OrderCompleted';
 import ViewCart from '../components/ViewCart';
 import {Provider as ReduxProvider} from 'react-redux';
 import configureStore from '../reducers/Store';
+import AddDetailsScreen from '../screens/AddDetailsScreen';
 
 const store = configureStore();
 
@@ -73,6 +74,10 @@ class App extends Component {
               component={OrderCompleted}
             />
             <PrimaryNavigator.Screen name="ViewCart" component={ViewCart} />
+            <PrimaryNavigator.Screen
+              name=" AddDetailsScreen "
+              component={AddDetailsScreen}
+            />
           </PrimaryNavigator.Navigator>
         </NavigationContainer>
       </ReduxProvider>
