@@ -97,9 +97,9 @@ export default function ViewCart() {
               <Text
                 style={{
                   color: 'black',
-                  fontSize: 15,
+                  fontSize: 18,
                   marginTop: 180,
-                  margin: 80,
+                  margin: 10,
                   fontWeight:'bold',
                 }}>
                 Oder Completed
