@@ -16,6 +16,7 @@ import HeaderTab from '../components/HeaderTab';
 import ViewCart from '../components/ViewCart';
 import {useDispatch} from 'react-redux';
 import {useSelector} from 'react-redux';
+import BottomTab from '../components/BottomTab';
 
 const items = [
   {
@@ -172,12 +173,32 @@ const HomeScreen = ({navigation}) => {
         data={filteredcats}
         renderItem={({item}) => <Card cat={item} navigation={navigation} />}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('FirstScreen')}>
-        <Image
-          style={{width: 35, height: 35, resizeMode: 'contain', marginLeft: 15}}
-          source={require('../assets/Images/Icon/arrow.png')}
-        />
-      </TouchableOpacity>
+      <View
+        style={{
+          flexDirection: 'row',
+          margin: 10,
+          marginHorizontal: 30,
+          justifyContent: 'space-between',
+        }}>
+        <TouchableOpacity onPress={() => navigation.navigate('MoreDetails')}>
+          <Image
+            style={{width: 30, height: 30, resizeMode: 'contain'}}
+            source={require('../assets/Images/Icon/home.png')}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('OrderCompleted')}>
+          <Image
+            style={{width: 30, height: 30, resizeMode: 'contain'}}
+            source={require('../assets/Images/Icon/user.png')}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            style={{width: 30, height: 30, resizeMode: 'contain'}}
+            source={require('../assets/Images/Icon/cart.png')}
+          />
+        </TouchableOpacity>
+      </View>
       <ViewCart />
     </SafeAreaView>
   );

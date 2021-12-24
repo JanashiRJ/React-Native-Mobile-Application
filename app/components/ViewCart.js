@@ -55,7 +55,7 @@ export default function ViewCart() {
     },
   });
 
-  const checkoutModalcontent = navigation => {
+  const checkoutModalcontent = () => {
     return (
       <>
         <View style={styles.modalContainer}>
